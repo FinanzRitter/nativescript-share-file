@@ -1,5 +1,16 @@
 # Nativescript Share File
 
+[![npm](https://img.shields.io/npm/v/@finanzritter/nativescript-share-file.svg)](https://www.npmjs.com/package/@finanzritter/nativescript-share-file)
+[![npm](https://img.shields.io/npm/dt/@finanzritter/nativescript-share-file.svg?label=npm%20downloads)](https://www.npmjs.com/package/@finanzritter/nativescript-share-file)
+
+:construction: **Work in progress**
+
+This package was forked from the unmaintained package
+[braune-digital/nativescript-share-file](https://github.com/braune-digital/nativescript-share-file).
+We are currently cleaning up and updating the code.
+
+---
+
 Send/Share files to other apps.
 
 Android Intent, IOS InteractionController:
@@ -16,10 +27,10 @@ Install the plugin in your app.
 npm install nativescript-share-file
 ~~~
 
-## Usage 
+## Usage
 
 Info: Shared files should be in the `documents` path.
-	
+
 ```TypeScript
     import { ShareFile } from 'nativescript-share-file';
     import * as fs from 'tns-core-modules/file-system';
@@ -40,8 +51,8 @@ Info: Shared files should be in the `documents` path.
             this.file = fs.File.fromPath(this.path);
             this.shareFile = new ShareFile();
 
-            this.shareFile.open( { 
-                path: this.path, 
+            this.shareFile.open( {
+                path: this.path,
                 intentTitle: 'Open text file with:', // optional Android
                 rect: { // optional iPad
                     x: 110,
@@ -67,26 +78,30 @@ Path to the file which will be shared.
 
 
 #### intentTitle
-Title for the intent on Android. 
+Title for the intent on Android.
 
-`String`: (Optional) 
+`String`: (Optional)
 Default: `Open file:`.
 
 
 #### rect
-Positioning the view for iPads. On iPhones it's always shown on the bottom. 
+Positioning the view for iPads. On iPhones it's always shown on the bottom.
 
-`Object`: (Optional) 
+`Object`: (Optional)
 Default: `{x: 0, y: 0, width: 0, height: 0 }`.
 
 #### options
-Show additional opening options for iOS devices. 
+Show additional opening options for iOS devices.
 
 `Boolean`: (Optional)
 Default: `false`.
 
 #### animated
-Opening animation for iOS devices. 
+Opening animation for iOS devices.
 
-`Boolean`: (Optional) 
+`Boolean`: (Optional)
 Default: `false`.
+
+## Credits
+
+- **@braune-digital**: for being the original author of this plugin **[braune-digital/nativescript-share-file](https://github.com/braune-digital/nativescript-share-file)**

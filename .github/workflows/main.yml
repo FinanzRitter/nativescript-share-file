@@ -1,0 +1,20 @@
+name: Publish
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10
+      - run: npm install
+        working-directory: src
+      - run: sh publish.sh
+        working-directory: publish
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

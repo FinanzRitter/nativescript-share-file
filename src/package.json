@@ -1,16 +1,17 @@
 {
-    "name": "nativescript-share-file",
-    "version": "1.0.6",
-    "description": "Send/share file to other apps.",
+    "name": "@finanzritter/nativescript-share-file",
+    "version": "1.0.7",
+    "description": "Send and share files to other apps in NativeScript using native OS APIs.",
     "main": "share-file",
     "typings": "index.d.ts",
-    "repository": "braune-digital/nativescript-share-file",
+    "repository": "finanzritter/nativescript-share-file",
     "nativescript": {
         "platforms": {
             "android": "3.0.0",
             "ios": "3.0.0"
         }
     },
+    "private": false,
     "scripts": {
         "tsc": "tsc -skipLibCheck",
         "build": "npm i && tsc",
@@ -36,14 +37,20 @@
         "iOS"
     ],
     "author": {
-        "name": "Leon Borlinghaus",
-        "email": "lb@braune-digital.com"
+        "name": "FinanzRitter",
+        "email": "developer@finanzritter.com"
     },
+    "contributors": [
+        {
+            "name": "Leon Borlinghaus",
+            "email": "lb@braune-digital.com"
+        }
+    ],
     "bugs": {
-        "url": "https://github.com/braune-digital/nativescript-share-file/issues"
+        "url": "https://github.com/finanzritter/nativescript-share-file/issues"
     },
     "license": "Apache-2.0",
-    "homepage": "https://github.com/braune-digital/nativescript-share-file",
+    "homepage": "https://github.com/finanzritter/nativescript-share-file",
     "readmeFilename": "README.md",
     "devDependencies": {
         "tns-core-modules": "^3.1.0",
