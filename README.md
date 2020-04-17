@@ -2,6 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/@finanzritter/nativescript-share-file.svg)](https://www.npmjs.com/package/@finanzritter/nativescript-share-file)
 [![npm](https://img.shields.io/npm/dt/@finanzritter/nativescript-share-file.svg?label=npm%20downloads)](https://www.npmjs.com/package/@finanzritter/nativescript-share-file)
+![Publish](https://github.com/FinanzRitter/nativescript-share-file/workflows/Publish/badge.svg?event=release)
 
 :construction: **Work in progress**
 
