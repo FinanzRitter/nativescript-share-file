@@ -1,3 +1,3 @@
-export declare class ShareFile{
-    open(args): boolean;
+export declare class ShareFile {
+  open(args): boolean;
 }

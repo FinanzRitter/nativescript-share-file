@@ -1,4 +1,4 @@
-import { NativeScriptConfig } from '@nativescript/core'
+import { NativeScriptConfig } from '@nativescript/core';
 
 export default {
   id: 'com.finanzritter.nativescript.sharefiledemo',
@@ -8,4 +8,4 @@ export default {
     markingMode: 'none',
   },
   appPath: 'app',
-} as NativeScriptConfig
+} as NativeScriptConfig;

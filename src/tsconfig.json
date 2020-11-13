@@ -1,29 +1,29 @@
 {
   "compilerOptions": {
-      "module": "esnext",
-      "target": "es2017",
-      "moduleResolution": "node",
-      "experimentalDecorators": true,
-      "emitDecoratorMetadata": true,
-      "noEmitHelpers": true,
-      "noEmitOnError": true,
-      "skipLibCheck": true,
-      "strict": false,
-      "forceConsistentCasingInFileNames": true,
-      "lib": [
-          "es2017",
-          "dom",
-          "es6"
-      ],
-      "baseUrl": ".",
-      "paths": {
-          "~/*": [
-              "src/*"
-          ]
-      }
+    "module": "esnext",
+    "target": "es2017",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noEmitHelpers": true,
+    "noEmitOnError": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "es2017",
+      "dom",
+      "es6"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "src/*"
+      ]
+    }
   },
   "exclude": [
-      "node_modules",
-      "platforms"
+    "node_modules",
+    "platforms"
   ]
 }
