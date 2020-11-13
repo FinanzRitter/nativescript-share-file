@@ -1,5 +1,4 @@
-import * as application from 'tns-core-modules/application';
-import * as fs from 'tns-core-modules/file-system';
+import { Application, File, Folder } from "@nativescript/core";
 
 export class ShareFile {
     open(args: any): void {
@@ -12,7 +11,7 @@ export class ShareFile {
           intent.addFlags(android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
           let uris = new java.util.ArrayList();
-          let uri = this._getUriForPath(args.path, '/' + this.fileName(args.path), application.android.context);
+          let uri = this._getUriForPath(args.path, '/' + this.fileName(args.path), Application.android.context);
           uris.add(uri);
           let builder = new android.os.StrictMode.VmPolicy.Builder();
           android.os.StrictMode.setVmPolicy(builder.build());
@@ -21,7 +20,7 @@ export class ShareFile {
           intent.setType("message/rfc822");
           intent.putParcelableArrayListExtra(android.content.Intent.EXTRA_STREAM, uris);
 
-          application.android.foregroundActivity.startActivity(android.content.Intent.createChooser(intent, args.intentTitle ? args.intentTitle : 'Open file:'));
+          Application.android.foregroundActivity.startActivity(android.content.Intent.createChooser(intent, args.intentTitle ? args.intentTitle : 'Open file:'));
 
         }
         catch (e) {
@@ -67,11 +66,11 @@ export class ShareFile {
       }
        _getUriForAssetPath(path, fileName, ctx) {
         path = path.replace("file://", "/");
-        if (!fs.File.exists(path)) {
+        if (!File.exists(path)) {
           console.log("File does not exist: " + path);
           return null;
         }
-        let localFile = fs.File.fromPath(path);
+        let localFile = File.fromPath(path);
         let localFileContents = localFile.readSync(function(e) { console.log(e); });
         let cacheFileName = this._writeBytesToFile(ctx, fileName, localFileContents);
         if (cacheFileName.indexOf("file://") === -1) {
@@ -99,7 +98,7 @@ export class ShareFile {
         }
         let storage = dir.toString() + "/filecomposer";
         let cacheFileName = storage + "/" + fileName;
-        let toFile = fs.File.fromPath(cacheFileName);
+        let toFile = File.fromPath(cacheFileName);
         toFile.writeSync(contents, function(e) { console.log(e); });
         if (cacheFileName.indexOf("file://") === -1) {
           cacheFileName = "file://" + cacheFileName;
@@ -107,10 +106,10 @@ export class ShareFile {
         return cacheFileName;
       }
     _cleanAttachmentFolder() {
-        if (application.android.context) {
-          let dir = application.android.context.getExternalCacheDir();
+        if (Application.android.context) {
+          let dir = Application.android.context.getExternalCacheDir();
           let storage = dir.toString() + "/filecomposer";
-          let cacheFolder = fs.Folder.fromPath(storage);
+          let cacheFolder = Folder.fromPath(storage);
           cacheFolder.clear();
         }
       }

@@ -1,6 +1,5 @@
-import { Observable } from 'tns-core-modules/data/observable';
-import { ShareFile } from 'nativescript-share-file';
-import * as fs from 'tns-core-modules/file-system';
+import { Observable, knownFolders, path, File } from "@nativescript/core";
+import { ShareFile } from "@finanzritter/nativescript-share-file";
 
 export class HelloWorldModel extends Observable {
   shareFile: ShareFile;
@@ -12,9 +11,9 @@ export class HelloWorldModel extends Observable {
   constructor() {
     super();
     this.fileName = 'report.txt';
-    this.documents = fs.knownFolders.documents();
-    this.path = fs.path.join(this.documents.path, this.fileName);
-    this.file = fs.File.fromPath(this.path);
+    this.documents = knownFolders.documents();
+    this.path = path.join(this.documents.path, this.fileName);
+    this.file = File.fromPath(this.path);
 
     this.shareFile = new ShareFile();
 
