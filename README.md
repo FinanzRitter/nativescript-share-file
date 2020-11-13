@@ -16,7 +16,7 @@ Send/Share files to other apps.
 
 Android Intent, IOS InteractionController:
 
-<img src="https://github.com/braune-digital/nativescript-share-file/blob/master/preview/preview-android.png?raw=true" width="250"> .   <img src="https://github.com/braune-digital/nativescript-share-file/blob/master/preview/preview-ios.png?raw=true" width="250">
+<img src="https://github.com/FinanzRitter/nativescript-share-file/blob/master/preview/preview-android.png?raw=true" width="250"> .   <img src="https://github.com/FinanzRitter/nativescript-share-file/blob/master/preview/preview-ios.png?raw=true" width="250">
 
 
 
@@ -25,7 +25,7 @@ Android Intent, IOS InteractionController:
 Install the plugin in your app.
 
 ~~~
-npm install nativescript-share-file
+npm install @finanzritter/nativescript-share-file
 ~~~
 
 ## Usage
@@ -33,40 +33,40 @@ npm install nativescript-share-file
 Info: Shared files should be in the `documents` path.
 
 ```TypeScript
-    import { ShareFile } from 'nativescript-share-file';
-    import * as fs from 'tns-core-modules/file-system';
+import { ShareFile } from '@finanzritter/nativescript-share-file';
+import { Observable, knownFolders, path, File } from "@nativescript/core";
 
-    export class TestClass{
+export class TestClass extends Observable {
+  shareFile;
+  fileName;
+  documents;
+  path;
+  file;
 
-        shareFile;
-        fileName;
-        documents;
-        path;
-        file;
+  constructor() {
+    super();
 
-        constructor() {
+    this.fileName = 'test.txt';
+    this.documents = knownFolders.documents();
+    this.path = path.join(this.documents.path, this.fileName);
+    this.file = File.fromPath(this.path);
 
-            this.fileName = 'text.txt';
-            this.documents = fs.knownFolders.documents();
-            this.path = fs.path.join(this.documents.path, this.fileName);
-            this.file = fs.File.fromPath(this.path);
-            this.shareFile = new ShareFile();
+    this.shareFile = new ShareFile();
 
-            this.shareFile.open( {
-                path: this.path,
-                intentTitle: 'Open text file with:', // optional Android
-                rect: { // optional iPad
-                    x: 110,
-                    y: 110,
-                    width: 0,
-                    height: 0
-                },
-                options: true, // optional iOS
-                animated: true // optional iOS
-            });
-        }
-    }
-
+    this.shareFile.open({
+      path: this.path,
+      intentTitle: 'Open text file with:', // optional Android
+      rect: { // optional iPad
+        x: 110,
+        y: 110,
+        width: 0,
+        height: 0
+      },
+      options: true, // optional iOS
+      animated: true // optional iOS
+    });
+  }
+}
 ```
 
 ### Arguments

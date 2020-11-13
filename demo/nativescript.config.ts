@@ -1,7 +1,7 @@
 import { NativeScriptConfig } from '@nativescript/core'
 
 export default {
-  id: 'org.nativescript.demo',
+  id: 'com.finanzritter.nativescript.sharefiledemo',
   appResourcesPath: 'app/App_Resources',
   android: {
     v8Flags: '--expose_gc',
