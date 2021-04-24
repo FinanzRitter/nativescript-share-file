@@ -28,6 +28,10 @@ Install the plugin in your app.
 npm install @finanzritter/nativescript-share-file
 ~~~
 
+### Android FileProvider Setup
+
+On Android, you must add a FileProvider definition and specify available files, which is documented [here](https://developer.android.com/reference/androidx/core/content/FileProvider#ProviderDefinition) or have a look at the demo app (AndroidManifest.xml and file_paths.xml).
+
 ## Usage
 
 Info: Shared files should be in the `documents` path.
