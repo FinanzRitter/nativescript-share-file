@@ -23,7 +23,7 @@ export class ShareFile {
         Application.android.foregroundActivity.startActivity(android.content.Intent.createChooser(intent, args.intentTitle ? args.intentTitle : 'Open file:'));
       }
       catch (e) {
-        console.log('ShareFile: Android intent failed');
+        console.log('ShareFile: Android intent failed: ' + e);
       }
     } else {
       console.log('ShareFile: Please add a file path');
