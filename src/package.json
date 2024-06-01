@@ -1,14 +1,14 @@
 {
   "name": "@finanzritter/nativescript-share-file",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Send and share files to other apps in NativeScript using native OS APIs.",
   "main": "share-file",
   "typings": "index.d.ts",
   "repository": "finanzritter/nativescript-share-file",
   "nativescript": {
     "platforms": {
-      "android": "8.1.1",
-      "ios": "8.1.0"
+      "android": "8.7.0",
+      "ios": "8.7.2"
     }
   },
   "private": false,
@@ -61,9 +61,9 @@
   "homepage": "https://github.com/finanzritter/nativescript-share-file",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "@nativescript/core": "~8.1.1",
-    "@nativescript/types": "~8.1.0",
-    "@nativescript/webpack": "~5.0.0",
+    "@nativescript/core": "~8.7.2",
+    "@nativescript/types": "~8.7.0",
+    "@nativescript/webpack": "~5.0.21",
     "prompt": "^1.1.0",
     "rimraf": "^3.0.0",
     "tslint": "^6.1.3",

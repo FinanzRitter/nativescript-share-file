@@ -3,13 +3,13 @@
   "description": "Demo application for nativescript-share-file",
   "dependencies": {
     "@finanzritter/nativescript-share-file": "file:../src",
-    "@nativescript/core": "~8.1.1",
+    "@nativescript/core": "~8.7.2",
     "@nativescript/theme": "^3.0.1",
     "@nativescript/unit-test-runner": "~3.0.0"
   },
   "devDependencies": {
-    "@nativescript/android": "8.1.1",
-    "@nativescript/ios": "~8.1.0",
+    "@nativescript/android": "8.7.0",
+    "@nativescript/ios": "8.7.2",
     "@nativescript/webpack": "~5.0.0",
     "babel-traverse": "6.24.1",
     "babel-types": "6.24.1",
